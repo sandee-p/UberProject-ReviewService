@@ -1,9 +1,7 @@
 package org.example.uberreviewservice.models;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Getter
 @Setter
@@ -12,7 +10,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @AllArgsConstructor
 
 @Entity // will work on the java logic layer
-@Table(name = "bookingreview") // will only work in DB level
+@Table(name = "booking_review") // will only work in DB level
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Review extends BaseModel {
 
     @Column(nullable = false)
