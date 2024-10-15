@@ -19,4 +19,6 @@ public class Review extends BaseModel {
 
     private Double rating;
 
+
+
 }
